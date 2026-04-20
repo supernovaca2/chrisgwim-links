@@ -1,10 +1,14 @@
 # chrisgwim-links
 
-Static link hub for Chris Gwim, hosted on GitHub Pages at https://links.chrisgwim.com.
+Static galaxy-themed link hub for Chris Gwim. Hosted on GitHub Pages at https://links.chrisgwim.com.
+
+## Design
+
+Orbital interface: wordmark at center, 5 platform icons orbiting on concentric rings against a starfield. See `docs/superpowers/specs/` for design details.
 
 ## Editing links
 
-Open `index.html` and replace each `href="#"` with the real URL. Look for `<!-- TODO -->` comments above each link:
+Open `index.html` and find the five `<!-- TODO -->` comments. Each marks an anchor tag whose `href="#"` should be replaced with the real artist URL:
 
 - Spotify artist profile
 - Apple Music artist page
@@ -14,13 +18,15 @@ Open `index.html` and replace each `href="#"` with the real URL. Look for `<!-- 
 
 Commit and push — GitHub Pages auto-deploys from `main`.
 
-## Editing the release hero
+## Tuning the galaxy
 
-Change the copy inside `<section class="hero">` in `index.html` (`Latest Release` label and `Music out now` title).
+- **Orbit speeds / radii:** `index.html` — each `.ring` has `--radius`; each `.orbit` has `--duration`, `--direction`, `--delay`.
+- **Colors:** `styles.css` — `:root` custom properties (`--violet`, `--magenta`, `--cyan`, `--accent-type`).
+- **Nebula size:** `styles.css` — `.nebula { width, height }`.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or serve the directory:
+Open `index.html` directly, or serve the directory:
 
 ```powershell
 python -m http.server 8080
@@ -30,4 +36,4 @@ Then visit http://localhost:8080.
 
 ## Deploying
 
-Pushes to `main` auto-deploy. The `CNAME` file and the DNS CNAME record in GoDaddy together pin the custom domain.
+Pushes to `main` auto-deploy via GitHub Pages in ~30 seconds.
