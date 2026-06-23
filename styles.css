@@ -287,8 +287,8 @@ body {
 .p-spotify    .planet-inner { box-shadow: 0 0 16px rgba(29, 185, 84, 0.55); }
 .p-apple      .planet-inner { box-shadow: 0 0 16px rgba(255, 80, 120, 0.55); }
 .p-soundcloud .planet-inner { box-shadow: 0 0 16px rgba(255, 112, 0, 0.55); }
+.p-youtube    .planet-inner { box-shadow: 0 0 16px rgba(255, 0, 0, 0.5); }
 .p-deezer     .planet-inner { box-shadow: 0 0 16px rgba(162, 56, 255, 0.55); }
-.p-tiktok     .planet-inner { box-shadow: 0 0 16px rgba(37, 244, 238, 0.55); }
 
 .planet:hover .planet-inner,
 .planet:focus-visible .planet-inner {
@@ -299,6 +299,15 @@ body {
 .planet:focus-visible { outline: none; }
 .planet:focus-visible .planet-inner {
   border-color: var(--fg);
+}
+
+/* Desktop: pause an orbit while its planet is hovered, so a moving target
+   stops under the cursor and is easy to click. Ambient motion resumes on leave. */
+@media (hover: hover) and (pointer: fine) {
+  .orbit:has(.planet:hover),
+  .planet:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* ===== Labels ===== */
@@ -391,20 +400,96 @@ body.labels-intro.labels-intro-hide .label {
   :root { --scale: 0.85; }
 }
 
+/* ===== Mobile: orbital system collapses to a tappable vertical stack =====
+   Below 600px, orbits would bleed past the screen edge and the icons are
+   moving targets with no hover. So we drop the rotation and lay the five
+   platforms out as full-width, always-labeled rows — the reliable
+   link-in-bio pattern — while keeping the cosmic backdrop. */
 @media (max-width: 600px) {
-  :root { --scale: 0.62; }
   .nebula-core { width: 600px; height: 500px; }
   .nebula-cyan { width: 480px; height: 420px; }
   .nebula-magenta { width: 560px; height: 500px; }
   .nebula-gold { width: 340px; height: 300px; }
+
+  html, body { overflow-y: auto; }
+
+  .galaxy {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 72px 22px 92px;
+    gap: 30px;
+  }
+
+  .orbits {
+    position: static;
+    inset: auto;
+    width: 100%;
+    max-width: 360px;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: auto;
+  }
+  .ring { position: static; width: 100%; height: auto; border: none; border-radius: 0; }
+  .orbit { position: static; width: 100%; height: auto; transform: none; animation: none; }
+
+  .planet {
+    position: static;
+    transform: none;
+    animation: none;
+    width: 100%;
+    height: 58px;
+    border-radius: 16px;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 0 18px;
+    background: rgba(20, 10, 40, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .planet:active { transform: scale(0.985); }
+
+  .planet-inner {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    background: transparent;
+    border: none;
+    box-shadow: none !important;
+  }
+  .planet .ico { width: 24px; height: 24px; }
+
+  /* Label is the visible platform name in each row */
+  .label {
+    position: static;
+    opacity: 1 !important;
+    transform: none;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  /* Brand color as a left accent bar on each row */
+  .p-spotify    { box-shadow: inset 3px 0 0 rgba(29, 185, 84, 0.95); }
+  .p-apple      { box-shadow: inset 3px 0 0 rgba(255, 80, 120, 0.95); }
+  .p-soundcloud { box-shadow: inset 3px 0 0 rgba(255, 112, 0, 0.95); }
+  .p-youtube    { box-shadow: inset 3px 0 0 rgba(255, 0, 0, 0.95); }
+  .p-deezer     { box-shadow: inset 3px 0 0 rgba(162, 56, 255, 0.95); }
+
+  /* Neutralize the desktop hover scale/glow on touch */
+  .planet:hover .planet-inner,
+  .planet:focus-visible .planet-inner { transform: none; }
 }
 
 @media (max-width: 360px) {
-  :root { --scale: 0.55; }
-}
-
-@media (max-height: 600px) {
-  :root { --scale: 0.55; }
+  .galaxy { padding-left: 16px; padding-right: 16px; }
 }
 
 /* ===== Reduced motion ===== */

@@ -4,25 +4,36 @@ Static galaxy-themed link hub for Chris Gwim. Hosted on GitHub Pages at https://
 
 ## Design
 
-Orbital interface: wordmark at center, 5 platform icons orbiting on concentric rings against a starfield. See `docs/superpowers/specs/` for design details.
+Orbital interface: wordmark at center, platform icons orbiting on concentric rings against a starfield.
+On phones (≤600px) the orbits collapse into a tappable vertical list of labeled buttons — the reliable
+link-in-bio pattern — while keeping the cosmic backdrop. See `docs/superpowers/specs/` for design details.
 
-## Editing links
+## Platform links
 
-Open `index.html` and find the five `<!-- TODO -->` comments. Each marks an anchor tag whose `href="#"` should be replaced with the real artist URL:
+The five orbiting planets link to Chris Gwim's verified artist profiles (set in `index.html`):
 
-- Spotify artist profile
-- Apple Music artist page
-- SoundCloud profile
-- Deezer artist page
-- TikTok profile
+| Planet (inner→outer) | Destination |
+|---|---|
+| Spotify | https://open.spotify.com/artist/6ig7ktBEad43lWfaIGbVWj |
+| Apple Music | https://music.apple.com/us/artist/chris-gwim/1874278935 |
+| SoundCloud | https://soundcloud.com/chrisgwim |
+| YouTube | https://www.youtube.com/channel/UCmEy0B-IqiFATgSFhqSoFFA |
+| Deezer | https://www.deezer.com/us/artist/132090272 |
 
-Commit and push — GitHub Pages auto-deploys from `main`.
+To change a link, edit the matching `<a class="planet …" href="…">` in `index.html`. The full `sameAs`
+list in the JSON-LD block (also Amazon Music + Tidal) feeds search engines — update it there too.
 
 ## Tuning the galaxy
 
 - **Orbit speeds / radii:** `index.html` — each `.ring` has `--radius`; each `.orbit` has `--duration`, `--direction`, `--delay`.
 - **Colors:** `styles.css` — `:root` custom properties (`--violet`, `--magenta`, `--cyan`, `--accent-type`).
 - **Nebula size:** `styles.css` — `.nebula { width, height }`.
+- **Desktop:** hovering a planet pauses its orbit so the moving icon is easy to click.
+
+## Social share card (og.png)
+
+`og.png` (1200×630) is the preview image shown when the link is shared. It's rendered from `og-card.html`.
+To regenerate: serve the folder, open `og-card.html` at a 1200×630 viewport, and screenshot to `og.png`.
 
 ## Local preview
 
