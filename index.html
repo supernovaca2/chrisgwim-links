@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Chris Gwim — Music</title>
-  <meta name="description" content="Music producer Chris Gwim — stream on Spotify, Apple Music, SoundCloud, YouTube, and Deezer.">
+  <meta name="description" content="Listen to music producer Chris Gwim — latest release plus the full catalog on Spotify, Apple Music, SoundCloud, YouTube, and Deezer.">
   <link rel="canonical" href="https://links.chrisgwim.com/">
   <meta name="theme-color" content="#050208">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Chris Gwim — Music">
-  <meta property="og:description" content="Stream Chris Gwim everywhere you listen.">
+  <meta property="og:description" content="Press play. Listen to Chris Gwim's latest release and full catalog.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://links.chrisgwim.com/">
   <meta property="og:image" content="https://links.chrisgwim.com/og.png">
@@ -22,7 +22,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chris Gwim — Music">
-  <meta name="twitter:description" content="Stream Chris Gwim everywhere you listen.">
+  <meta name="twitter:description" content="Press play. Listen to Chris Gwim's latest release and full catalog.">
   <meta name="twitter:image" content="https://links.chrisgwim.com/og.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -32,7 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Structured data: helps search engines link this page to Chris Gwim's verified artist profiles -->
+  <!-- Structured data: artist + catalog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,11 +49,22 @@
       "https://www.deezer.com/us/artist/132090272",
       "https://music.amazon.com/artists/B0947LL66D",
       "https://listen.tidal.com/artist/24720859"
+    ],
+    "album": [
+      { "@type": "MusicAlbum", "name": "Techno Blaster", "url": "https://www.deezer.com/album/1011425321", "image": "https://links.chrisgwim.com/covers/techno-blaster.jpg", "datePublished": "2026-06-23" },
+      { "@type": "MusicAlbum", "name": "Are you out there", "url": "https://www.deezer.com/album/1011425431", "image": "https://links.chrisgwim.com/covers/are-you-out-there.jpg", "datePublished": "2026-06-22" },
+      { "@type": "MusicAlbum", "name": "Tonight Right Now", "url": "https://www.deezer.com/album/1011425441", "image": "https://links.chrisgwim.com/covers/tonight-right-now.jpg", "datePublished": "2026-06-22" },
+      { "@type": "MusicAlbum", "name": "Lost Track", "url": "https://www.deezer.com/album/1011684451", "image": "https://links.chrisgwim.com/covers/lost-track.jpg", "datePublished": "2026-06-22" },
+      { "@type": "MusicAlbum", "name": "Vesper Infinity", "url": "https://www.deezer.com/album/1001074721", "image": "https://links.chrisgwim.com/covers/vesper-infinity.jpg", "datePublished": "2026-06-09" },
+      { "@type": "MusicAlbum", "name": "Digital Dreams", "url": "https://www.deezer.com/album/1001096741", "image": "https://links.chrisgwim.com/covers/digital-dreams.jpg", "datePublished": "2026-06-09" },
+      { "@type": "MusicAlbum", "name": "Take My Hand", "url": "https://www.deezer.com/album/1000318151", "image": "https://links.chrisgwim.com/covers/take-my-hand.jpg", "datePublished": "2026-06-09" },
+      { "@type": "MusicAlbum", "name": "Rain Drops on Your Face", "url": "https://www.deezer.com/album/1000297541", "image": "https://links.chrisgwim.com/covers/rain-drops-on-your-face.jpg", "datePublished": "2026-06-08" },
+      { "@type": "MusicAlbum", "name": "Soca Nights", "url": "https://www.deezer.com/album/999429721", "image": "https://links.chrisgwim.com/covers/soca-nights.jpg", "datePublished": "2026-06-07" }
     ]
   }
   </script>
 </head>
-<body class="labels-intro">
+<body>
   <div class="stars"></div>
   <div class="nebula nebula-core"></div>
   <div class="nebula nebula-cyan"></div>
@@ -61,79 +72,103 @@
   <div class="nebula nebula-gold"></div>
   <div class="shooting-star" id="shootingStar"></div>
 
-  <main class="galaxy">
-    <div class="center">
+  <main class="page">
+    <header class="hero">
+      <div class="hero-rings" aria-hidden="true">
+        <span class="hero-ring hr-1"></span>
+        <span class="hero-ring hr-2"></span>
+        <span class="hero-ring hr-3"></span>
+      </div>
       <h1 class="wordmark">Chris <em>Gwim</em></h1>
       <p class="tagline">Music Producer</p>
-      <span class="center-pinpoint" aria-hidden="true"></span>
-    </div>
+      <a class="scroll-cue" href="#listen" aria-label="Scroll to music">
+        <span>Listen</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </header>
 
-    <nav class="orbits" aria-label="Streaming and social platforms">
-      <!-- Ring 1 — Spotify (innermost) -->
-      <div class="ring ring-1" style="--radius: 90px;">
-        <div class="orbit" style="--duration: 40s; --direction: normal;">
-          <a class="planet p-spotify" href="https://open.spotify.com/artist/6ig7ktBEad43lWfaIGbVWj" target="_blank" rel="noopener" aria-label="Listen on Spotify">
-            <span class="planet-inner">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 9.5c3.5-1 8-.5 11 1M7 13c3-.8 6.5-.3 9 1M7.5 16c2.5-.6 5-.2 7 .8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-            <span class="label">Spotify</span>
-          </a>
-        </div>
+    <section class="release" id="listen" aria-labelledby="release-h">
+      <h2 class="section-title" id="release-h">Latest Release</h2>
+      <p class="section-sub">Techno Blaster — press play, no need to leave.</p>
+      <div class="player-frame">
+        <iframe class="player" src="https://open.spotify.com/embed/artist/6ig7ktBEad43lWfaIGbVWj?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Chris Gwim on Spotify"></iframe>
       </div>
+    </section>
 
-      <!-- Ring 2 — Apple Music -->
-      <div class="ring ring-2" style="--radius: 140px;">
-        <div class="orbit" style="--duration: 55s; --direction: reverse; --delay: -12s;">
-          <a class="planet p-apple" href="https://music.apple.com/us/artist/chris-gwim/1874278935" target="_blank" rel="noopener" aria-label="Listen on Apple Music">
-            <span class="planet-inner">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4v11a3 3 0 1 1-3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 17V7l6-1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="label">Apple Music</span>
-          </a>
-        </div>
+    <section class="discography" aria-labelledby="disco-h">
+      <h2 class="section-title" id="disco-h">Discography</h2>
+      <p class="section-sub">Nine singles and counting.</p>
+      <div class="grid">
+        <a class="cover is-latest" href="https://www.deezer.com/album/1011425321" target="_blank" rel="noopener">
+          <img src="covers/techno-blaster.jpg" alt="Techno Blaster cover" width="500" height="500" loading="lazy">
+          <span class="badge">Latest</span>
+          <span class="cover-title">Techno Blaster</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1011425431" target="_blank" rel="noopener">
+          <img src="covers/are-you-out-there.jpg" alt="Are you out there cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Are you out there</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1011425441" target="_blank" rel="noopener">
+          <img src="covers/tonight-right-now.jpg" alt="Tonight Right Now cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Tonight Right Now</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1011684451" target="_blank" rel="noopener">
+          <img src="covers/lost-track.jpg" alt="Lost Track cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Lost Track</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1001074721" target="_blank" rel="noopener">
+          <img src="covers/vesper-infinity.jpg" alt="Vesper Infinity cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Vesper Infinity</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1001096741" target="_blank" rel="noopener">
+          <img src="covers/digital-dreams.jpg" alt="Digital Dreams cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Digital Dreams</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1000318151" target="_blank" rel="noopener">
+          <img src="covers/take-my-hand.jpg" alt="Take My Hand cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Take My Hand</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/1000297541" target="_blank" rel="noopener">
+          <img src="covers/rain-drops-on-your-face.jpg" alt="Rain Drops on Your Face cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Rain Drops on Your Face</span>
+        </a>
+        <a class="cover" href="https://www.deezer.com/album/999429721" target="_blank" rel="noopener">
+          <img src="covers/soca-nights.jpg" alt="Soca Nights cover" width="500" height="500" loading="lazy">
+          <span class="cover-title">Soca Nights</span>
+        </a>
       </div>
+    </section>
 
-      <!-- Ring 3 — SoundCloud -->
-      <div class="ring ring-3" style="--radius: 190px;">
-        <div class="orbit" style="--duration: 70s; --direction: normal; --delay: -25s;">
-          <a class="planet p-soundcloud" href="https://soundcloud.com/chrisgwim" target="_blank" rel="noopener" aria-label="Listen on SoundCloud">
-            <span class="planet-inner">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-4M7 16v-7M10 17V9M13 17V7a4 4 0 0 1 7.5 2 3.5 3.5 0 0 1-.5 7H13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="label">SoundCloud</span>
-          </a>
-        </div>
-      </div>
+    <section class="platforms" aria-labelledby="plat-h">
+      <h2 class="section-title" id="plat-h">Listen Everywhere</h2>
+      <nav class="platform-row" aria-label="Streaming platforms">
+        <a class="platform p-spotify" href="https://open.spotify.com/artist/6ig7ktBEad43lWfaIGbVWj" target="_blank" rel="noopener" aria-label="Spotify">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 9.5c3.5-1 8-.5 11 1M7 13c3-.8 6.5-.3 9 1M7.5 16c2.5-.6 5-.2 7 .8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Spotify</span>
+        </a>
+        <a class="platform p-apple" href="https://music.apple.com/us/artist/chris-gwim/1874278935" target="_blank" rel="noopener" aria-label="Apple Music">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4v11a3 3 0 1 1-3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 17V7l6-1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Apple Music</span>
+        </a>
+        <a class="platform p-soundcloud" href="https://soundcloud.com/chrisgwim" target="_blank" rel="noopener" aria-label="SoundCloud">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-4M7 16v-7M10 17V9M13 17V7a4 4 0 0 1 7.5 2 3.5 3.5 0 0 1-.5 7H13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>SoundCloud</span>
+        </a>
+        <a class="platform p-youtube" href="https://www.youtube.com/channel/UCmEy0B-IqiFATgSFhqSoFFA" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 9.3v5.4l4.7-2.7z" fill="currentColor"/></svg>
+          <span>YouTube</span>
+        </a>
+        <a class="platform p-deezer" href="https://www.deezer.com/us/artist/132090272" target="_blank" rel="noopener" aria-label="Deezer">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="15" width="4" height="3" fill="currentColor"/><rect x="9" y="15" width="4" height="3" fill="currentColor"/><rect x="15" y="15" width="4" height="3" fill="currentColor"/><rect x="9" y="11" width="4" height="3" fill="currentColor"/><rect x="15" y="11" width="4" height="3" fill="currentColor"/><rect x="15" y="7" width="4" height="3" fill="currentColor"/></svg>
+          <span>Deezer</span>
+        </a>
+      </nav>
+    </section>
 
-      <!-- Ring 4 — YouTube -->
-      <div class="ring ring-4" style="--radius: 240px;">
-        <div class="orbit" style="--duration: 85s; --direction: reverse; --delay: -40s;">
-          <a class="planet p-youtube" href="https://www.youtube.com/channel/UCmEy0B-IqiFATgSFhqSoFFA" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-            <span class="planet-inner">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 9.3v5.4l4.7-2.7z" fill="currentColor"/></svg>
-            </span>
-            <span class="label">YouTube</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Ring 5 — Deezer (outermost) -->
-      <div class="ring ring-5" style="--radius: 290px;">
-        <div class="orbit" style="--duration: 100s; --direction: normal; --delay: -60s;">
-          <a class="planet p-deezer" href="https://www.deezer.com/us/artist/132090272" target="_blank" rel="noopener" aria-label="Listen on Deezer">
-            <span class="planet-inner">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="15" width="4" height="3" fill="currentColor"/><rect x="9" y="15" width="4" height="3" fill="currentColor"/><rect x="15" y="15" width="4" height="3" fill="currentColor"/><rect x="9" y="11" width="4" height="3" fill="currentColor"/><rect x="15" y="11" width="4" height="3" fill="currentColor"/><rect x="15" y="7" width="4" height="3" fill="currentColor"/></svg>
-            </span>
-            <span class="label">Deezer</span>
-          </a>
-        </div>
-      </div>
-    </nav>
+    <footer class="site-footer">
+      <a class="email" href="mailto:chrisgwim@chrisgwim.com" aria-label="Email Chris Gwim">chrisgwim@chrisgwim.com</a>
+    </footer>
   </main>
-
-  <footer class="site-footer">
-    <a class="email" href="mailto:chrisgwim@chrisgwim.com" aria-label="Email Chris Gwim">chrisgwim@chrisgwim.com</a>
-  </footer>
 
   <script src="script.js" defer></script>
 </body>

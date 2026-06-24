@@ -1,21 +1,6 @@
-// Galaxy page JS — label intro timer, shooting-star loop, reduced-motion respect.
+// Galaxy background: occasional shooting star. Respects reduced-motion.
 (() => {
-  const body = document.body;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // --- Label intro: show labels for 3s on load, then fade to icon-only ---
-  if (!prefersReducedMotion) {
-    setTimeout(() => {
-      body.classList.add('labels-intro-hide');
-    }, 3000);
-
-    setTimeout(() => {
-      body.classList.remove('labels-intro', 'labels-intro-hide');
-    }, 3500);
-  }
-  // Reduced-motion path: CSS keeps labels visible; no class changes needed.
-
-  // --- Shooting star: fire every 15-25s at a random angle ---
   if (prefersReducedMotion) return;
 
   const star = document.getElementById('shootingStar');
@@ -35,7 +20,7 @@
     star.style.setProperty('--dy', `${dy}px`);
 
     star.classList.remove('flash');
-    void star.offsetWidth; // force reflow so animation restarts
+    void star.offsetWidth; // force reflow so the animation restarts
     star.classList.add('flash');
   };
 

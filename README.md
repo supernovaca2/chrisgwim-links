@@ -1,43 +1,37 @@
 # chrisgwim-links
 
-Static galaxy-themed link hub for Chris Gwim. Hosted on GitHub Pages at https://links.chrisgwim.com.
+Music-first, galaxy-themed one-page site for Chris Gwim. Hosted on GitHub Pages at https://links.chrisgwim.com.
 
-## Design
+## Layout
 
-Orbital interface: wordmark at center, platform icons orbiting on concentric rings against a starfield.
-On phones (≤600px) the orbits collapse into a tappable vertical list of labeled buttons — the reliable
-link-in-bio pattern — while keeping the cosmic backdrop. See `docs/superpowers/specs/` for design details.
+A single scrolling page over a starfield/nebula backdrop:
 
-## Platform links
+1. **Hero** — `Chris Gwim` wordmark with decorative orbit rings.
+2. **Latest release** — embedded Spotify player (plays inline).
+3. **Discography** — grid of singles with cover art; each tile opens that release.
+4. **Listen everywhere** — Spotify, Apple Music, SoundCloud, YouTube, Deezer.
+5. **Footer** — contact email.
 
-The five orbiting planets link to Chris Gwim's verified artist profiles (set in `index.html`):
+See `docs/superpowers/specs/` for design history.
 
-| Planet (inner→outer) | Destination |
-|---|---|
-| Spotify | https://open.spotify.com/artist/6ig7ktBEad43lWfaIGbVWj |
-| Apple Music | https://music.apple.com/us/artist/chris-gwim/1874278935 |
-| SoundCloud | https://soundcloud.com/chrisgwim |
-| YouTube | https://www.youtube.com/channel/UCmEy0B-IqiFATgSFhqSoFFA |
-| Deezer | https://www.deezer.com/us/artist/132090272 |
+## Editing content
 
-To change a link, edit the matching `<a class="planet …" href="…">` in `index.html`. The full `sameAs`
-list in the JSON-LD block (also Amazon Music + Tidal) feeds search engines — update it there too.
+- **Player:** the `<iframe class="player">` in `index.html`. Swap the `src` to feature a specific Spotify album/track, or a SoundCloud embed.
+- **Discography:** each release is an `<a class="cover">` in the `.grid`. Cover images live in `covers/` (500×500 JPGs). Newest first; the first tile carries the `is-latest` class + `Latest` badge.
+- **Platform links:** the `.platform-row` anchors; the JSON-LD `sameAs` list (incl. Amazon + Tidal) feeds search engines — keep it in sync.
 
-## Tuning the galaxy
+### Refreshing the discography from the catalog
 
-- **Orbit speeds / radii:** `index.html` — each `.ring` has `--radius`; each `.orbit` has `--duration`, `--direction`, `--delay`.
-- **Colors:** `styles.css` — `:root` custom properties (`--violet`, `--magenta`, `--cyan`, `--accent-type`).
-- **Nebula size:** `styles.css` — `.nebula { width, height }`.
-- **Desktop:** hovering a planet pauses its orbit so the moving icon is easy to click.
+Cover art and release order come from the Deezer public API
+(`https://api.deezer.com/artist/132090272/albums`). To refresh, re-download the
+500×500 covers into `covers/` and update the `.grid` tiles + JSON-LD `album` list.
 
 ## Social share card (og.png)
 
-`og.png` (1200×630) is the preview image shown when the link is shared. It's rendered from `og-card.html`.
-To regenerate: serve the folder, open `og-card.html` at a 1200×630 viewport, and screenshot to `og.png`.
+`og.png` (1200×630) is the link preview. Source: `og-card.html`. App icon source: `icon-180.html`.
+Regenerate by rendering each at its native size and screenshotting.
 
 ## Local preview
-
-Open `index.html` directly, or serve the directory:
 
 ```powershell
 python -m http.server 8080
@@ -47,4 +41,4 @@ Then visit http://localhost:8080.
 
 ## Deploying
 
-Pushes to `main` auto-deploy via GitHub Pages in ~30 seconds.
+Pushes to `main` auto-deploy via GitHub Pages in ~30–60 seconds.
