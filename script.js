@@ -1,8 +1,24 @@
-// Galaxy background: occasional shooting star. Respects reduced-motion.
+// Hero equalizer bars + galaxy shooting star.
+// Animation lives in CSS; this only builds DOM, so reduced-motion is respected.
 (() => {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
+  // --- Hero equalizer: N bars, center-weighted height, desynced pulse ---
+  const wf = document.querySelector('.waveform');
+  if (wf && !wf.childElementCount) {
+    const BARS = 48;
+    const center = (BARS - 1) / 2;
+    for (let i = 0; i < BARS; i++) {
+      const bar = document.createElement('span');
+      bar.className = 'wf-bar';
+      const dist = Math.abs(i - center) / center;        // 0 center -> 1 edges
+      bar.style.setProperty('--peak', (1 - dist * 0.62).toFixed(2)); // taller mid
+      bar.style.setProperty('--dur', (0.8 + Math.random() * 1.1).toFixed(2) + 's');
+      bar.style.setProperty('--delay', (-Math.random() * 2).toFixed(2) + 's');
+      wf.appendChild(bar);
+    }
+  }
 
+  // --- Galaxy shooting star (skipped under reduced-motion) ---
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const star = document.getElementById('shootingStar');
   if (!star) return;
 
